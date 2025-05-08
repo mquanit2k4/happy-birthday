@@ -18,6 +18,9 @@
 html{
     height: 100%;
 }
+audio {
+    display: none;
+}
 body {
     position: relative;
     font-size: 16px;
@@ -109,6 +112,46 @@ body {
 #btn__letter:hover i{
     animation: rotateHeart 1s infinite linear;
 }
+
+.gift-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#btn__gift {
+    position: absolute;
+    bottom: -70px; /* Đặt nút ngay dưới box letter */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-text-pink);
+    outline: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 50px;
+    border: 3px solid var(--color-black);
+    font-family: "Sriracha", cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.5s ease-in-out;
+}
+
+#btn__gift:hover {
+    border-color: var(--color-heart);
+    background-color: var(--color-heart);
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#btn__gift:hover i{
+    animation: rotateHeart 1s infinite linear;
+}
+
+#btn__gift:active{
+    transform: scale(0.7);
+}
+
 @keyframes rotateHeart{
     0%,50%, 100%{
         transform: rotate(0deg);
@@ -623,6 +666,7 @@ body {
     right: 30px;
 }
 
+
 /* responsive */
 @media screen and (max-width:768px) {
     .flag__birthday{
@@ -815,4 +859,33 @@ body {
         margin-top: 0px!important;
         font-size: 1rem!important;
     }
+}
+
+#gift-image {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 1s ease-in-out;
+    border: 10px solid white; /* Thêm viền trắng */
+    border-radius: 15px; /* Tùy chọn: bo tròn các góc */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Tùy chọn: thêm hiệu ứng đổ bóng */
+}
+
+#gift-image.show {
+    opacity: 1;
+    transform: scale(1);
+}
+.gift-box {
+    display: none; /* Ẩn mặc định */
+    position: fixed;
+    top: 50%; /* Căn giữa theo chiều dọc */
+    left: 50%; /* Căn giữa theo chiều ngang */
+    transform: translate(-50%, -50%); /* Dịch chuyển để căn giữa */
+    width: auto; /* Tự động điều chỉnh kích thước */
+    height: auto; /* Tự động điều chỉnh kích thước */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5); /* Tùy chọn: thêm nền mờ */
+    z-index: 20;
+    
 }
